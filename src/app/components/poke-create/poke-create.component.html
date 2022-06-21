@@ -1,0 +1,45 @@
+
+<p>pokemon-create works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="row">
+    <div class="col-sm-6">
+        <label>
+            Nombre
+        </label>
+        <input class="form-control" formControlName="nombre" type="text" name="">
+        <div *ngIf='submit && f.nombre.errors'> 
+            <div *ngIf='f.nombre.errors.required'>
+                <div class="alert alert-danger" role="alert">
+                Requerido
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="col-sm-6">
+        <label>
+            Nivel
+        </label>
+        <input class="form-control" formControlName="nivel" type="text" name="">
+        <div *ngIf='submit && f.nivel.errors'> 
+            <div *ngIf='f.nivel.errors.required'>
+                <div class="alert alert-danger" role="alert">
+                Requerido
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <label>
+            Especie
+        </label>
+        <input class="form-control" formControlName="especie" type="text" name="">
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <button class="btn btn-primary float-right" type="submit">Submit</button>
+        </div>
+    </div>
+
+</div>
+</form>
